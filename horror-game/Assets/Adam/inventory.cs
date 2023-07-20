@@ -5,10 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "inventory")] 
 public class inventory : ScriptableObject
 {
-    public string id;
-    public string displayname;
-    public Sprite icon;
-    public GameObject prefab;
+    public bool[] isFull;
+    public GameObject[] slots;
     // Start is called before the first frame update
     void Start()
     {
