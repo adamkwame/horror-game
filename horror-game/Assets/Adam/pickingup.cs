@@ -14,12 +14,12 @@ public class pickingup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("ghhjgkjghkj");
             for(int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)
                 {
                     inventory.isFull[i] = true;
-                    break;
                 }
                 
             }
