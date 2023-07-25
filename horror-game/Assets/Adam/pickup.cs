@@ -47,6 +47,7 @@ public class pickup : MonoBehaviour
         if (other.gameObject.tag == "Key")
         {
             inRange = true;
+            pickuptext.gameObject.SetActive(true);
             Debug.Log("collision");
         }
     }
@@ -55,7 +56,7 @@ public class pickup : MonoBehaviour
     {
         if (doneSomething && other.gameObject.tag == "Key")
         {
-           // other.gameObject.SetActive(false);
+            // other.gameObject.SetActive(false);
         }
     }
 
@@ -63,15 +64,21 @@ public class pickup : MonoBehaviour
     {
         if (other.CompareTag("Key"))
         {
+            pickuptext.gameObject.SetActive(false);
             Debug.Log("ghhjgkjghkj");
-           /* for (int i = 0; i < inventory.slots.Length; i++)
-            {
-                if (inventory.isFull[i] == false)
-                {
-                    inventory.isFull[i] = true;
-                }
+            /* for (int i = 0; i < inventory.slots.Length; i++)
+             {
+                 if (inventory.isFull[i] == false)
+                 {
+                     inventory.isFull[i] = true;
+                 }
 
-            }*/
+             }*/
         }
+    }
+
+    private void Key()
+    {
+        Destroy(key);
     }
 }
