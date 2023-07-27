@@ -1,35 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
+using TMPro;
 
 public class pickup : MonoBehaviour
 {
     public GameObject pickuptext;
     public GameObject key;
+
+    GameObject interactedObj;
+
+    public TextMeshProUGUI Prompt;
+
+    private bool inRange = false;
+    private bool doneSomething = false;
+
+    private inventory inventory;
+   
+      
+   
     void Start()
     {
-        key.SetActive(false);
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<inventory>();
         pickuptext.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (inRange)
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Debug.Log("WOAHAHAHH");
+                doneSomething= true;
+                inRange = false;
+
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Key")
+        {
+            inRange = true;
+            pickuptext.gameObject.SetActive(true);
+            Debug.Log("collision");
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "player")
+        if (doneSomething && other.gameObject.tag == "Key")
         {
-            pickuptext.SetActive(true);
-
-            if (Input.GetKey(KeyCode.F))
-            {
-                this.gameObject.SetActive(false);
-                key.SetActive(true);
-                pickuptext.SetActive(false);
-            }
+            // other.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        pickuptext.SetActive(false);
+        if (other.CompareTag("Key"))
+        {
+            pickuptext.gameObject.SetActive(false);
+            Debug.Log("ghhjgkjghkj");
+            /* for (int i = 0; i < inventory.slots.Length; i++)
+             {
+                 if (inventory.isFull[i] == false)
+                 {
+                     inventory.isFull[i] = true;
+                 }
+
+             }*/
+        }
     }
 
+    private void Key()
+    {
+        Destroy(key);
+    }
 }
