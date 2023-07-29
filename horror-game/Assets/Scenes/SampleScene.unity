@@ -1515,6 +1515,7 @@ MonoBehaviour:
   pickuptext: {fileID: 651561293}
   key: {fileID: -927199367670048503, guid: 6f861a5f3e542c94a80038eab2cb83d1, type: 3}
   Prompt: {fileID: 651561295}
+  uIinventoru: {fileID: 1758302706}
 --- !u!114 &1234106321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,7 +1528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ea8ca566d2fc34c81f7d6d988c139a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00
+  isFull: 
   slots:
   - {fileID: 0}
   - {fileID: 0}
@@ -1639,6 +1640,7 @@ GameObject:
   - component: {fileID: 1758302704}
   - component: {fileID: 1758302703}
   - component: {fileID: 1758302702}
+  - component: {fileID: 1758302706}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1736,6 +1738,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1758302706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758302701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441be2fddf1885040863469398aafee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1834702976
 GameObject:
   m_ObjectHideFlags: 0

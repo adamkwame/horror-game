@@ -17,7 +17,7 @@ public class pickup : MonoBehaviour
 
     private bool inRange = false;
     private bool doneSomething = false;
-
+    [SerializeField] private UIinventoru uIinventoru;
     private inventory inventory;
    
       
@@ -76,6 +76,13 @@ public class pickup : MonoBehaviour
              }*/
         }
     }
+
+    private void Awake()
+    {
+        inventory = new inventory();
+        //UIinventoru.Set(inventory);
+    }
+
 
     private void Key()
     {
