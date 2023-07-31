@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class item 
+public class item : MonoBehaviour
 {
-   public enum itemtype
+    public Sprite itemSprite;
+    public KeyTypes keyType;
+    public enum KeyTypes
     {
-        key,
-        pill,
-        atrifact,
+        red,
+        blue,
+        green,
+        black,
     }
-    public itemtype Itemtype;
-    public int amount;
-
-   /* public Sprite GetSprite()
-    {
-        switch (Itemtype) {
-            default:
-                case temtype.key:
-        }
-    }*/
 }
