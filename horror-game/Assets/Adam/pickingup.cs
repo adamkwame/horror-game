@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class pickingup : MonoBehaviour
 {
-    private inventory inventory;
-    private void Start()
-    {
-      inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<inventory>();  
-    }
+    //private inventory inventory;
+    //private void Start()
+    //{
+    //  inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<inventory>();  
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("ghhjgkjghkj");
-            for(int i = 0; i < inventory.slots.Length; i++)
-            {
-                if (inventory.isFull[i] == false)
-                {
-                    inventory.isFull[i] = true;
-                }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Debug.Log("ghhjgkjghkj");
+    //        for(int i = 0; i < inventory.slots.Length; i++)
+    //        {
+    //            if (inventory.isFull[i] == false)
+    //            {
+    //                inventory.isFull[i] = true;
+    //            }
                 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 }
