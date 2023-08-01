@@ -39,11 +39,6 @@ public class pickup : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Key"))
