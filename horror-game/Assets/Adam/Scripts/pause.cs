@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class pause : MonoBehaviour
 {
     public GameObject Pausemenu;
-    public static bool ispaused;
-    public KeyCode pauseKey;
+    public  bool ispaused;
+   
 
     public void playgame()
     {
@@ -23,14 +23,16 @@ public class pause : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(pauseKey))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("dnjdnj");
+            Pausemenu.SetActive(!Pausemenu.activeSelf);
             //Pausemenu.SetActive(true);
-            if (ispaused)
+            if (Pausemenu.activeSelf == false)
             {
                 Resumegame();
             }
-            else
+            if(Pausemenu.activeSelf == true) 
             {
                 pausegame();
             }
