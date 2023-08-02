@@ -8,7 +8,6 @@ using Unity.VisualScripting;
 
 public class SanityBehavior : MonoBehaviour
 {
-    public LayerMask sanityReach;
     public PostProcessProfile profile;
     Vignette vignette;
     Slider sanitySlider;
@@ -40,5 +39,10 @@ public class SanityBehavior : MonoBehaviour
             yield return null;
         }
         Debug.Log("Blacked out!");
+    }
+
+    public void AffectSanity(float value)
+    {
+        sanitySlider.value += value;
     }
 }
