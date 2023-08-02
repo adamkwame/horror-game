@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Key
+  - Tentacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Sanity
   - Water
   - UI
   - whatIsPlayer
-  - 
+  - PostProcessing
   - 
   - 
   - 
