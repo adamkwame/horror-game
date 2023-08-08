@@ -7,14 +7,15 @@ public class pickup : MonoBehaviour
 {
     public GameObject pickuptext;
     public GameObject key;
-    public TextMeshProUGUI Prompt;
     UIinventoru uiInventory;
+    public GameObject Artifact;
 
 
     void Start()
     {
         pickuptext.SetActive(false);
         uiInventory = FindObjectOfType<UIinventoru>();
+        pickuptext.SetActive(false);
     }
 
     private void Update()
@@ -25,6 +26,12 @@ public class pickup : MonoBehaviour
             item itemScript = key.GetComponent<item>();
             uiInventory.AddItem(itemScript.itemSprite, itemScript.keyType.ToString());
             Destroy(key);
+            pickuptext.gameObject.SetActive(false);
+        }
+        if(Input.GetKeyDown(KeyCode.F) && Artifact != null)
+        {
+            Artifact.gameObject.SetActive(false);
+
         }
     }
 
@@ -37,15 +44,20 @@ public class pickup : MonoBehaviour
             key = other.gameObject;
             Debug.Log("collision");
         }
+        if(other.gameObject.tag == "Artifact")
+        {
+            Artifact.gameObject.SetActive(true);
+            Artifact= other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Key"))
         {
-            pickuptext.gameObject.SetActive(false);
             Debug.Log("ghhjgkjghkj");
             key = null;
+            pickuptext.gameObject.SetActive(false);
         }
     }
 }
