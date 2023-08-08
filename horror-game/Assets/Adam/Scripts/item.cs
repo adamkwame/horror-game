@@ -13,5 +13,6 @@ public class item : MonoBehaviour
         blue,
         green,
         black,
+        Gold,
     }
 }
