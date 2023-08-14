@@ -8,7 +8,7 @@ public class pickup : MonoBehaviour
     public GameObject pickuptext;
     public GameObject key;
     UIinventoru uiInventory;
-    public GameObject Artifact;
+    public GameObject artifact;
 
 
     void Start()
@@ -16,6 +16,7 @@ public class pickup : MonoBehaviour
         pickuptext.SetActive(false);
         uiInventory = FindObjectOfType<UIinventoru>();
         pickuptext.SetActive(false);
+        artifact.SetActive(false);
     }
 
     private void Update()
@@ -28,9 +29,9 @@ public class pickup : MonoBehaviour
             Destroy(key);
             pickuptext.gameObject.SetActive(false);
         }
-        if(Input.GetKeyDown(KeyCode.F) && Artifact != null)
+        if(Input.GetKeyDown(KeyCode.F) && artifact != null)
         {
-            Artifact.gameObject.SetActive(false);
+            artifact.SetActive(false);
 
         }
     }
@@ -46,8 +47,7 @@ public class pickup : MonoBehaviour
         }
         if(other.gameObject.tag == "Artifact")
         {
-            Artifact.gameObject.SetActive(true);
-            Artifact= other.gameObject;
+            artifact.SetActive(true);
         }
     }
 
@@ -58,6 +58,10 @@ public class pickup : MonoBehaviour
             Debug.Log("ghhjgkjghkj");
             key = null;
             pickuptext.gameObject.SetActive(false);
+        }
+        if (other.CompareTag("Artifact"))
+        {
+            artifact.SetActive(false);
         }
     }
 }
