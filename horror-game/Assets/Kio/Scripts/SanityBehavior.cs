@@ -36,7 +36,7 @@ public class SanityBehavior : MonoBehaviour
             percent = newValue / sanitySlider.maxValue;
             vignette.intensity.value = percent;
 
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
         Debug.Log("Blacked out!");
     }
