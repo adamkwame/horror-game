@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MyInput();
-        print(movementSpeed);
     }
 
     private void FixedUpdate()
